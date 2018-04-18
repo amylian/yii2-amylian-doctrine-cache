@@ -1,5 +1,8 @@
 {
-    "name": "amylian/yii2-amylian-doctrine-cache",
-    "type": "yii2-extension",
-    "minimum-stability": "dev"
+  "name": "amylian/yii2-amylian-doctrine-cache",
+  "type": "yii2-extension",
+  "autoload": {
+    "psr-4": {
+      "abexto\\amylian\\yii\\doctrine\\cache\\": "src/"
+    }
 }
