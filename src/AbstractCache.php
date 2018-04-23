@@ -11,6 +11,6 @@ namespace abexto\amylian\yii\doctrine\cache;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class AbstractCache extends \abexto\amylian\yii2\doctrine\base\AbstractDoctrineInstWrapperComponent
+class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
 {
 }

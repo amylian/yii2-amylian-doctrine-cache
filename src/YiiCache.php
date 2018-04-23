@@ -37,7 +37,7 @@ class YiiCache extends AbstractCache
     public function init()
     {
         parent::init();
-        $this->cache = Instance::ensure($this->cache, '\yii\caching\CacheInterface');
+        $this->cache = \yii\di\Instance::ensure($this->cache, '\yii\caching\CacheInterface');
     }
 
 }
