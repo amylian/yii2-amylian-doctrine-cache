@@ -1,9 +1,24 @@
 {
   "name": "amylian/yii2-amylian-doctrine-cache",
   "type": "yii2-extension",
+  "description": "ATTENTION EXPERIMENTAL! Cache implementations for Amylian/Doctrine",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "amylian/yii2-amylian-doctrine-base": "*"
+  },
   "autoload": {
     "psr-4": {
       "abexto\\amylian\\yii\\doctrine\\cache\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "abexto\\amylian\\yii\\doctrine\\cache\\tests\\": "tests/"
     }
   }
 }
