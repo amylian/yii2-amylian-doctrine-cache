@@ -41,4 +41,37 @@ namespace abexto\amylian\yii\doctrine\cache\tests\units;
  */
 abstract class AbstractCacheTestUnit extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
 {
+
+    /**
+     * @return \Doctrine\Common\Cache\CacheProvider
+     */
+    protected function getCacheInst()
+    {
+        $cacheInst = \Yii::$app->dc->cache; 
+    }
+    
+    public function testSave()
+    {
+        $this->getCacheInst()->save('amylian_test_key', 'amylian_test_data');
+        $this->assertEquals('amylian_test_data', $this->getCacheInst()->fetch('amylian_test_key'));
+    }
+    
+    public function testFlushAll()
+    {
+        $this->getCacheInst()->save('amylian_test_key', 'amylian_test_data');
+        $this->getCacheInst()->flushAll();
+        $this->assertFalse($this->getCacheInst('amylian_test_key'));
+    }
+    
+    public function testSaveMultiple()
+    {
+        $testData = [
+            'amylian_test_key1' => 'amylian_test_data1',
+            'amylian_test_key2' => 'amylian_test_data2',
+        ];
+        $this->getCacheInst()->flushAll();
+        $this->getCacheInst()->saveMultiple($testData);
+        $this->assertSame($testData, $this->getCacheInst()->fetchMultiple(array_keys($testData)));
+    }
+    
 }
