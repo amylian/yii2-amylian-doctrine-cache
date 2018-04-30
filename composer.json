@@ -14,7 +14,8 @@
     "doctrine/cache": "*"
   },
   "require-dev": {
-    "amylian/yii2-amylian-phpunit": "*"
+    "amylian/yii2-amylian-phpunit": "*",
+    "symphony/phpunit-bridge": "*"
   },
   "autoload": {
     "psr-4": {
