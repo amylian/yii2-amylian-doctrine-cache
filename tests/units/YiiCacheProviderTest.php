@@ -55,8 +55,26 @@ class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
     protected function _getCacheDriver(): \Doctrine\Common\Cache\CacheProvider
     {
         return \Yii::createObject([
-                        'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
+                    'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
                 ])->inst;
+    }
+
+    public function testFetchingANonExistingKeyShouldNeverCauseANoticeOrWarning()
+    {
+        $cache        = $this->_getCacheDriver();
+        $errorHandler = function ($errno, $errstr, $errfile, $errline, $errcontext) {
+            restore_error_handler();
+            $this->fail('include failure captured: '.$errstr);
+        };
+        set_error_handler($errorHandler);
+        $cache->fetch('key');
+        self::assertSame(
+                $errorHandler, set_error_handler(function () {
+                    
+                }), 'The error handler is the one set by this test, and wasn\'t replaced'
+        );
+        restore_error_handler();
+        restore_error_handler();
     }
 
 }
