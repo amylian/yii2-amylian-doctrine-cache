@@ -45,7 +45,6 @@ class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
-        parent::setUp();
         \abexto\amylian\yii\phpunit\mockYii::mockYiiConsoleApplication(['components' =>
             ['cache' => [
                     'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
