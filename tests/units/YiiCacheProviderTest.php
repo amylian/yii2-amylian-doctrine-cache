@@ -41,6 +41,7 @@ namespace abexto\amylian\yii\doctrine\cache\tests\units;
  */
 class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
 {
+
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
@@ -48,21 +49,15 @@ class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
         \abexto\amylian\yii\phpunit\mockYii::mockYiiConsoleApplication(['components' =>
             ['cache' => [
                     'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
-                ],
-                'dc'    => [
-                    'class'      => \abexto\amylian\yii\doctrine\base\Doctrine::class,
-                    'components' => [
-                        'cache' => [
-                            'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
-                        ]
-                    ]
-        ]]]);
-        
+                ]
+        ]]);
     }
 
     protected function _getCacheDriver(): \Doctrine\Common\Cache\CacheProvider
     {
-        return \Yii::$app->dc->cache->inst;
+        return \Yii::createObject([
+                        'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
+                ])->inst;
     }
 
 }

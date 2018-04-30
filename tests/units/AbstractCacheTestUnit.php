@@ -60,7 +60,7 @@ abstract class AbstractCacheTestUnit extends \abexto\amylian\yii\phpunit\Abstrac
     {
         $this->getCacheInst()->save('amylian_test_key', 'amylian_test_data');
         $this->getCacheInst()->flushAll();
-        $this->assertFalse($this->getCacheInst('amylian_test_key'));
+        $this->assertFalse($this->getCacheInst()->fetch('amylian_test_key'));
     }
     
     public function testSaveMultiple()

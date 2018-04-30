@@ -15,4 +15,17 @@ namespace abexto\amylian\yii\doctrine\cache;
  */
 class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
 {
+
+    /**
+     * @var string Namespace Cache Namespace
+     */
+    public $namespace = null;
+    
+    protected function getInstPropertyMappings()
+    {
+        return array_merge(parent::getInstPropertyMappings(), [
+            'namespace' => 'namespace'
+        ]);
+    }
+
 }
