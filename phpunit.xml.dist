@@ -10,7 +10,7 @@
 
 
   <testsuites>
-    <testsuite name="Abexto Amylian Doctrine Base Test Suite">
+    <testsuite name="Abexto Amylian Doctrine Cache Test Suite">
       <directory>./tests/units</directory>
     </testsuite>
   </testsuites>

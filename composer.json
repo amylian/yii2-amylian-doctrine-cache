@@ -9,7 +9,8 @@
     }
   ],
   "require": {
-    "amylian/yii2-amylian-doctrine-base": "*"
+    "amylian/yii2-amylian-doctrine-base": "*",
+    "amylian/yii2-amylian-doctrine-cache": "*"
   },
   "autoload": {
     "psr-4": {
