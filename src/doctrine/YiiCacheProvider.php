@@ -44,7 +44,13 @@ class YiiCacheProvider extends \Doctrine\Common\Cache\CacheProvider
 
     protected function doGetStats()
     {
-        return [];
+        return array(
+            Doctrine\Common\Cache\Cache::STATS_HITS               => null,
+            Doctrine\Common\Cache\Cache::STATS_MISSES             => null,
+            Doctrine\Common\Cache\Cache::STATS_UPTIME             => null,
+            Doctrine\Common\Cache\Cache::STATS_MEMORY_USAGE       => null,
+            Doctrine\Common\Cache\Cache::STATS_MEMORY_AVAILABLE   => null,
+        );
     }
 
     protected function doSave($id, $data, $lifeTime = 0): bool
