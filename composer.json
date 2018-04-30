@@ -15,7 +15,7 @@
   },
   "require-dev": {
     "amylian/yii2-amylian-phpunit": "*",
-    "symphony/phpunit-bridge": "*"
+    "symfony/phpunit-bridge": "*"
   },
   "autoload": {
     "psr-4": {
