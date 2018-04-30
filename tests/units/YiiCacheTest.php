@@ -48,17 +48,17 @@ class YiiCacheTest extends AbstractCacheTestUnit
         self::mockYiiConsoleApplication(['components' =>
             ['cache' => [
                     'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
-                ]],
-            'dc'         => [
-                'class' => \abexto\amylian\yii\doctrine\base\Doctrine::class,
-                'components' => [
-                    'cache' => [
-                        'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
+                ],
+                'dc'    => [
+                    'class'      => \abexto\amylian\yii\doctrine\base\Doctrine::class,
+                    'components' => [
+                        'cache' => [
+                            'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
+                        ]
                     ]
-                ]
-        ]]);
+        ]]]);
     }
-    
+
     public function testIsInstAvailable()
     {
         $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\doctrine\YiiCache::class, \Yii::$app->dc->cache->inst);
