@@ -10,7 +10,10 @@
   ],
   "require": {
     "amylian/yii2-amylian-doctrine-base": "*",
-    "amylian/yii2-amylian-doctrine-cache": "*"
+    "amylian/yii2-amylian-cache": "*"
+  },
+  "require-dev": {
+    "amylian/yii2-amylian-phpunit": "*"
   },
   "autoload": {
     "psr-4": {
