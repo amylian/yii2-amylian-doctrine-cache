@@ -24,7 +24,7 @@
   "autoload-dev": {
     "psr-4": {
       "abexto\\amylian\\yii\\doctrine\\cache\\tests\\": "tests/",
-      "Doctrine\\Tests\\": "vendor/doctrine/cache/tests/"
+      "Doctrine\\Tests\\": "vendor/doctrine/cache/tests/Doctrine/Tests/",
     }
   }
 }
