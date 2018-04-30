@@ -18,7 +18,7 @@ class YiiCache extends AbstractCache
      *
      * @var string Class of the instance to wrap
      */
-    public $instClass = doctrine\YiiCache::class;
+    public $instClass = doctrine\YiiCacheProvider::class;
 
     /**
      *

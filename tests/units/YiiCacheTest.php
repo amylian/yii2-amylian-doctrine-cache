@@ -61,7 +61,7 @@ class YiiCacheTest extends AbstractCacheTestUnit
 
     public function testIsInstAvailable()
     {
-        $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\doctrine\YiiCache::class, \Yii::$app->dc->cache->inst);
+        $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\doctrine\YiiCacheProvider::class, \Yii::$app->dc->cache->inst);
     }
 
 }

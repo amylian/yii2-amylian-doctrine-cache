@@ -11,7 +11,7 @@ namespace abexto\amylian\yii\doctrine\cache\doctrine;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class YiiCache extends \Doctrine\Common\Cache\CacheProvider
+class YiiCacheProvider extends \Doctrine\Common\Cache\CacheProvider
 {
 
     /**
