@@ -47,7 +47,7 @@ abstract class AbstractCacheTestUnit extends \abexto\amylian\yii\phpunit\Abstrac
      */
     protected function getCacheInst()
     {
-        $cacheInst = \Yii::$app->dc->cache->inst; 
+        return \Yii::$app->dc->cache->inst; 
     }
     
     public function testSave()
