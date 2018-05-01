@@ -36,6 +36,12 @@ namespace abexto\amylian\yii\doctrine\cache\tests\units;
 
 require_once __DIR__.'/YiiCacheProviderTestTrait.php';
 
+if (version_compare (\Doctrine\Common\Cache\Version::VERSION, '1.7.0') < 0)
+{
+    return false;
+}
+
+
 /**
  * Description of YiiCacheProviderTest
  *
