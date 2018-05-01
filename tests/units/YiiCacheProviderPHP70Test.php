@@ -42,7 +42,7 @@ require_once __DIR__.'/YiiCacheProviderTestTrait.php';
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class YiiCacheProviderPHP71Test extends \Doctrine\Tests\Common\Cache\CacheTest
+class YiiCacheProviderPHP70Test extends \Doctrine\Tests\Common\Cache\CacheTest
 {
     
     use YiiCacheProviderTestTrait;
