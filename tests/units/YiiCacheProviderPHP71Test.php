@@ -82,7 +82,7 @@ class YiiCacheProviderPHP71Test extends \Doctrine\Tests\Common\Cache\CacheTest
         restore_error_handler();
     }
     
-    protected function _getCacheDriver()
+    protected function _getCacheDriver() : \Doctrine\Common\Cache\CacheProvider
     {
         return \Yii::createObject([
                     'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
