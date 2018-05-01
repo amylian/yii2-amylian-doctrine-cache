@@ -35,13 +35,12 @@
 namespace abexto\amylian\yii\doctrine\cache\tests\units;
 
 /**
- * Description of YiiCacheProviderTest
+ * Description of YiiCacheProviderTestTrait
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
+trait YiiCacheProviderTestTrait
 {
-
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
@@ -51,30 +50,5 @@ class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
                 ]
         ]]);
     }
-
-    protected function _getCacheDriver(): \Doctrine\Common\Cache\CacheProvider
-    {
-        return \Yii::createObject([
-                    'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
-                ])->inst;
-    }
-
-    public function testFetchingANonExistingKeyShouldNeverCauseANoticeOrWarning(): void
-    {
-        $cache        = $this->_getCacheDriver();
-        $errorHandler = function ($errno, $errstr, $errfile, $errline, $errcontext) {
-            restore_error_handler();
-            $this->fail('include failure captured: '.$errstr);
-        };
-        set_error_handler($errorHandler);
-        $cache->fetch('key');
-        self::assertSame(
-                $errorHandler, set_error_handler(function () {
-                    
-                }), 'The error handler is the one set by this test, and wasn\'t replaced'
-        );
-        restore_error_handler();
-        restore_error_handler();
-    }
-
+    
 }
