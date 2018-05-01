@@ -59,7 +59,7 @@ class YiiCacheProviderTest extends \Doctrine\Tests\Common\Cache\CacheTest
                 ])->inst;
     }
 
-    public function testFetchingANonExistingKeyShouldNeverCauseANoticeOrWarning()
+    public function testFetchingANonExistingKeyShouldNeverCauseANoticeOrWarning(): void
     {
         $cache        = $this->_getCacheDriver();
         $errorHandler = function ($errno, $errstr, $errfile, $errline, $errcontext) {
