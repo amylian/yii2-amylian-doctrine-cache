@@ -2,6 +2,8 @@
   "name": "amylian/yii2-amylian-doctrine-cache",
   "type": "yii2-extension",
   "description": "ATTENTION EXPERIMENTAL! Cache implementations for Amylian/Doctrine",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",
@@ -9,8 +11,8 @@
     }
   ],
   "require": {
-    "amylian/yii2-amylian-doctrine-base": "*",
-    "amylian/yii2-amylian-cache": "*",
+    "amylian/yii2-amylian-doctrine-base": "dev-master",
+    "amylian/yii2-amylian-cache": "dev-master",
     "doctrine/cache": "*"
   },
   "require-dev": {
@@ -26,5 +28,8 @@
       "abexto\\amylian\\yii\\doctrine\\cache\\tests\\": "tests/",
       "Doctrine\\Tests\\": "vendor/doctrine/cache/tests/Doctrine/Tests/"
     }
+  },
+  "extra": {
+    "bootstrap": "abexto\\amylian\\yii\\doctrine\\common\\PackageBoostrap"
   }
 }

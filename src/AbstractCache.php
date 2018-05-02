@@ -15,6 +15,8 @@ namespace abexto\amylian\yii\doctrine\cache;
  */
 class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
 {
+    
+    const DEFAULT_CACHE_ID = 'dcDefaultCache';
 
     /**
      * @var string Namespace Cache Namespace
