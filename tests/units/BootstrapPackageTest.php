@@ -43,7 +43,8 @@ class BootstrapPackageTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCa
 {
     public function testAutoReigstrationOfSingleton()
     {
-        $this->assertSame(\abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::DEFAULT_CACHE_ID), 
-                \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::DEFAULT_CACHE_ID));
+        static::mockYiiConsoleApplication([]);
+        $this->assertSame(\abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class), 
+                \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class));
     }
 }
