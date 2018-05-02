@@ -41,12 +41,15 @@ namespace abexto\amylian\yii\doctrine\cache;
  */
 class PackageBootstrap implements \yii\base\BootstrapInterface
 {
+
     /**
      * @param \yii\base\Application $app
      */
     public function bootstrap($app)
     {
-        \Yii::$container->setSingleton(AbstractCache::DEFAULT_CACHE_ID, ['class' => YiiCache::class]);
+        if (!\Yii::$container->has(AbstractCache::class)) {
+            \Yii::$container->setSingleton(AbstractCache::class, ['class' => YiiCache::class]);
+        }
     }
 
 }

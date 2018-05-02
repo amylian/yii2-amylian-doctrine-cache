@@ -26,9 +26,9 @@ class YiiCache extends AbstractCache
      */
     public $cache = 'cache';
 
-    protected function getInstPropertyMatchings()
+    protected function getInstPropertyMappings()
     {
-        return array_merge(parent::getInstPropertyMatchings(), ['cache' => 'yiiCache']);
+    return array_merge(parent::getInstPropertyMappings(), ['cache' => 'yiiCache']);
     }
 
     /**
@@ -37,8 +37,10 @@ class YiiCache extends AbstractCache
     public function init()
     {
         parent::init();
-        $this->cache = \yii\di\Instance::ensure($this->cache, '\yii\caching\CacheInterface');
+        $this->cache = \abexto\amylian\yii\doctrine\base\InstanceManager::ensure($this->cache, '\yii\caching\CacheInterface');
+        /*
         $this->inst->yiiCache = $this->cache;
+        */
     }
 
 }
