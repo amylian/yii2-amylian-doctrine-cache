@@ -34,8 +34,7 @@
 
 namespace abexto\amylian\yii\doctrine\cache\tests\units;
 
-require_once __DIR__.'/AbstractCacheTestUnit.php';
-
+require_once __DIR__ . '/AbstractCacheTestUnit.php';
 
 /**
  * Description of YiiCacheTest
@@ -49,32 +48,28 @@ class YiiCacheTest extends AbstractCacheTestUnit
     {
         parent::setUp();
         self::mockYiiConsoleApplication(['components' =>
-            ['cache' => [
+            ['cache'   => [
                     'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
                 ],
-                'dc'    => [
-                    'class'      => \abexto\amylian\yii\doctrine\base\Doctrine::class,
-                    'components' => [
-                        'cache' => [
-                            'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class,
-                            'namespace' => 'test-namespace'
-                        ]
-                    ]
-        ]]]);
+                'dcCache' => [
+                    'class'     => \abexto\amylian\yii\doctrine\cache\YiiCache::class,
+                    'namespace' => 'test-namespace'
+                ]
+            ]
+        ]);
     }
 
     public function testIsInstAvailable()
     {
-        $cache = \Yii::$app->dc->cache;
+        $cache = \Yii::$app->dcCache;
         $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\YiiCache::class, $cache);
-        $inst =  $cache->inst;
+        $inst  = $cache->inst;
         $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\doctrine\YiiCacheProvider::class, $inst);
     }
-    
+
     public function testConfiguration()
     {
-        $this->assertSame('test-namespace', \Yii::$app->dc->cache->inst->getNamespace());
+        $this->assertSame('test-namespace', \Yii::$app->dcCache->inst->getNamespace());
     }
-    
 
 }
