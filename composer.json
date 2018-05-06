@@ -30,6 +30,6 @@
     }
   },
   "extra": {
-    "bootstrap": "abexto\\amylian\\yii\\doctrine\\cache\\PackageBoostrap"
+    "bootstrap": "abexto\\amylian\\yii\\doctrine\\cache\\PackageBootstrap"
   }
 }
