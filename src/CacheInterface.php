@@ -35,21 +35,9 @@
 namespace abexto\amylian\yii\doctrine\cache;
 
 /**
- * Description of PackageBootstrap
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class PackageBootstrap implements \yii\base\BootstrapInterface
+interface CacheInterface
 {
-
-    /**
-     * @param \yii\base\Application $app
-     */
-    public function bootstrap($app)
-    {
-        if (!\Yii::$container->has(CacheInterface::class)) {
-            \Yii::$container->setSingleton(CacheInterface::class, ['class' => YiiCache::class]);
-        }
-    }
-
 }

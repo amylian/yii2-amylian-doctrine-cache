@@ -13,13 +13,14 @@ namespace abexto\amylian\yii\doctrine\cache;
  * 
  * @property \Doctrine\Common\Cache\CacheProvider $inst Instance of the wrapped Docrtrine CacheProvider
  */
-class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent
+class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent implements CacheInterface
 {
+
     /**
      * @var string Namespace Cache Namespace
      */
     public $namespace = null;
-    
+
     protected function getInstPropertyMappings()
     {
         return array_merge(parent::getInstPropertyMappings(), [
