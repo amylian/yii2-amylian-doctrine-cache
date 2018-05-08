@@ -35,21 +35,11 @@
 namespace abexto\amylian\yii\doctrine\cache;
 
 /**
- * Description of PackageBootstrap
+ * Description of Consts
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class PackageBootstrap implements \yii\base\BootstrapInterface
+class Consts extends \abexto\amylian\yii\doctrine\base\Consts
 {
-
-    /**
-     * @param \yii\base\Application $app
-     */
-    public function bootstrap($app)
-    {
-        if (!\Yii::$container->has(BaseCacheInterface::class)) {
-            \Yii::$container->setSingleton(BaseCacheInterface::class, ['class' => YiiCache::class]);
-        }
-    }
-
+    //put your code here
 }

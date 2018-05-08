@@ -13,7 +13,7 @@ namespace abexto\amylian\yii\doctrine\cache;
  * 
  * @property \Doctrine\Common\Cache\CacheProvider $inst Instance of the wrapped Docrtrine CacheProvider
  */
-class AbstractCache extends \abexto\amylian\yii\doctrine\base\AbstractDoctrineInstWrapperComponent implements CacheInterface
+class BaseCache extends \abexto\amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseCacheInterface
 {
 
     /**

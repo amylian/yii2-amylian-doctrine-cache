@@ -38,6 +38,6 @@ namespace abexto\amylian\yii\doctrine\cache;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-interface CacheInterface
+interface BaseCacheInterface
 {
 }
