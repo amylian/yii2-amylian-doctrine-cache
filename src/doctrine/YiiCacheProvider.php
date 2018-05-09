@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\doctrine\cache\doctrine;
+namespace amylian\yii\doctrine\cache\doctrine;
 
 /**
  * Description of YiiCache

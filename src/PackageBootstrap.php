@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache;
+namespace amylian\yii\doctrine\cache;
 
 /**
  * Description of PackageBootstrap
@@ -47,8 +47,8 @@ class PackageBootstrap implements \yii\base\BootstrapInterface
      */
     public function bootstrap($app)
     {
-        if (!\Yii::$container->has(BaseCacheInterface::class)) {
-            \Yii::$container->setSingleton(BaseCacheInterface::class, ['class' => YiiCache::class]);
+        if (!\Yii::$container->has(Consts::DEFAULT_CACHE_REF)) {
+            \Yii::$container->setSingleton(Consts::DEFAULT_CACHE_REF, ['class' => Consts::DEFAULT_CACHE_CLASS]);
         }
     }
 

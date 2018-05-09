@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache\tests\units;
+namespace amylian\yii\doctrine\cache\tests\units;
 
 require_once __DIR__ . '/AbstractCacheTestUnit.php';
 
@@ -49,10 +49,10 @@ class YiiCacheTest extends AbstractCacheTestUnit
         parent::setUp();
         self::mockYiiConsoleApplication(['components' =>
             ['cache'   => [
-                    'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
+                    'class' => \amylian\yii\cache\MultiLevelCache::class
                 ],
                 'dcCache' => [
-                    'class'     => \abexto\amylian\yii\doctrine\cache\YiiCache::class,
+                    'class'     => \amylian\yii\doctrine\cache\YiiCache::class,
                     'namespace' => 'test-namespace'
                 ]
             ]
@@ -62,9 +62,9 @@ class YiiCacheTest extends AbstractCacheTestUnit
     public function testIsInstAvailable()
     {
         $cache = \Yii::$app->dcCache;
-        $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\YiiCache::class, $cache);
+        $this->assertInstanceOf(\amylian\yii\doctrine\cache\YiiCache::class, $cache);
         $inst  = $cache->inst;
-        $this->assertInstanceOf(\abexto\amylian\yii\doctrine\cache\doctrine\YiiCacheProvider::class, $inst);
+        $this->assertInstanceOf(\amylian\yii\doctrine\cache\doctrine\YiiCacheProvider::class, $inst);
     }
 
     public function testConfiguration()

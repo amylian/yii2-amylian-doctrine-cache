@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\doctrine\cache;
+namespace amylian\yii\doctrine\cache;
 
 /**
  * Description of AbstractCache
@@ -13,8 +13,10 @@ namespace abexto\amylian\yii\doctrine\cache;
  * 
  * @property \Doctrine\Common\Cache\CacheProvider $inst Instance of the wrapped Docrtrine CacheProvider
  */
-class BaseCache extends \abexto\amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseCacheInterface
+class BaseCache extends \amylian\yii\doctrine\base\BaseDoctrineComponent implements BaseCacheInterface
 {
+    const DEFAULT_REF = Consts::DEFAULT_CACHE_REF;
+    const DEFAULT_CLASS = Consts::DEFAULT_CACHE_CLASS;
 
     /**
      * @var string Namespace Cache Namespace

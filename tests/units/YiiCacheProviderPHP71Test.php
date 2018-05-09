@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache\tests\units;
+namespace amylian\yii\doctrine\cache\tests\units;
 
 require_once __DIR__.'/YiiCacheProviderTestTrait.php';
 
@@ -59,7 +59,7 @@ class YiiCacheProviderPHP71Test extends \Doctrine\Tests\Common\Cache\CacheTest
     protected function setUp()
     {
         parent::setUp();
-        if (PHP_VERSION < 70100) {
+        if (PHP_VERSION_ID < 70100) {
             self::markTestSkipped('This is version '.PHP_VERSION.' Test does not apply');
         }
     }
@@ -84,9 +84,7 @@ class YiiCacheProviderPHP71Test extends \Doctrine\Tests\Common\Cache\CacheTest
     
     protected function _getCacheDriver() : \Doctrine\Common\Cache\CacheProvider
     {
-        return \Yii::createObject([
-                    'class' => \abexto\amylian\yii\doctrine\cache\YiiCache::class
-                ])->inst;
+        return \amylian\yii\doctrine\cache\BaseCache::ensure();
     }
     
 

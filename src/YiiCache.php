@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\doctrine\cache;
+namespace amylian\yii\doctrine\cache;
 
 /**
  * Description of YiiCache
@@ -37,7 +37,7 @@ class YiiCache extends BaseCache
     public function init()
     {
         parent::init();
-        $this->cache = \abexto\amylian\yii\doctrine\base\InstanceManager::ensure($this->cache, '\yii\caching\CacheInterface');
+        $this->cache = \amylian\yii\doctrine\base\InstanceManager::ensure($this->cache, '\yii\caching\CacheInterface');
         /*
         $this->inst->yiiCache = $this->cache;
         */

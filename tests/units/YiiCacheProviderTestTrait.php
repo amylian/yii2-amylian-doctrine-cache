@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache\tests\units;
+namespace amylian\yii\doctrine\cache\tests\units;
 
 /**
  * Description of YiiCacheProviderTestTrait
@@ -41,14 +41,21 @@ namespace abexto\amylian\yii\doctrine\cache\tests\units;
  */
 trait YiiCacheProviderTestTrait
 {
+
     public static function setUpBeforeClass()
     {
         parent::setUpBeforeClass();
-        \abexto\amylian\yii\phpunit\mockYii::mockYiiConsoleApplication(['components' =>
+        \amylian\yii\phpunit\mockYii::mockYiiConsoleApplication(['components' =>
             ['cache' => [
-                    'class' => \abexto\amylian\yii\cache\MultiLevelCache::class
+                    'class' => \amylian\yii\cache\MultiLevelCache::class
                 ]
-        ]]);
+            ], ['collection' => [
+                    'singletons' => [
+                        \amylian\yii\doctrine\cache\Consts::DEFAULT_CACHE_REF => [
+                            'class' => \amylian\yii\doctrine\cache\Consts::DEFAULT_CACHE_CLASS
+                        ]
+                    ]
+        ]]]);
     }
-    
+
 }

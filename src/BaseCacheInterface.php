@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache;
+namespace amylian\yii\doctrine\cache;
 
 /**
  *

@@ -32,14 +32,22 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache;
+namespace amylian\yii\doctrine\cache;
 
 /**
- * Description of Consts
+ * Common constants
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class Consts extends \abexto\amylian\yii\doctrine\base\Consts
+class Consts extends \amylian\yii\doctrine\base\Consts
 {
-    //put your code here
+    /**
+     * Standard Cache component ID.
+     */
+    const DEFAULT_CACHE_REF = BaseCacheInterface::class;
+    
+    /**
+     * Standard Cache component class
+     */
+    const DEFAULT_CACHE_CLASS = YiiCache::class;
 }

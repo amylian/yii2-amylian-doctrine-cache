@@ -32,14 +32,14 @@
  * 
  */
 
-namespace abexto\amylian\yii\doctrine\cache\tests\units;
+namespace amylian\yii\doctrine\cache\tests\units;
 
 /**
  * Description of CoreDoctrineInstWrapperComponentTest
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-abstract class AbstractCacheTestUnit extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
+abstract class AbstractCacheTestUnit extends \amylian\yii\phpunit\AbstractYiiTestCase
 {
 
     /**
