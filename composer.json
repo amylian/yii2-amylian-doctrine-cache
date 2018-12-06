@@ -1,35 +1,38 @@
 {
-  "name": "amylian/yii2-amylian-doctrine-cache",
-  "type": "yii2-extension",
-  "description": "ATTENTION EXPERIMENTAL! Cache implementations for Amylian/Doctrine",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
-  "require": {
-    "amylian/yii2-amylian-doctrine-base": "dev-master",
-    "amylian/yii2-amylian-cache": "dev-master",
-    "doctrine/cache": "^1.6@stable"
-  },
-  "require-dev": {
-    "amylian/yii2-amylian-phpunit": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "amylian\\yii\\doctrine\\cache\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "amylian\\yii\\doctrine\\cache\\tests\\": "tests/",
-      "Doctrine\\Tests\\": "vendor/doctrine/cache/tests/Doctrine/Tests/"
-    }
-  },
-  "extra": {
-    "bootstrap": "amylian\\yii\\doctrine\\cache\\PackageBootstrap"
-  }
+	"name" : "amylian/yii2-amylian-doctrine-cache",
+	"type" : "yii2-extension",
+	"description" : "ATTENTION EXPERIMENTAL! Cache implementations for Amylian/Doctrine",
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"config" : {
+		"preferred-install" : "source"
+	},
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "https://asset-packagist.org"
+		}
+	],
+	"require" : {
+		"amylian/yii2-amylian-doctrine-base" : "dev-master",
+		"amylian/yii2-amylian-cache" : "dev-master",
+		"doctrine/cache" : "^1.6@stable"
+	},
+	"require-dev" : {
+		"amylian/yii2-amylian-phpunit" : "*",
+		"phpunit/phpunit" : "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"amylian\\yii\\doctrine\\cache\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"amylian\\yii\\doctrine\\cache\\tests\\" : "tests/",
+			"Doctrine\\Tests\\" : "vendor/doctrine/cache/tests/Doctrine/Tests/"
+		}
+	},
+	"extra" : {
+		"bootstrap" : "amylian\\yii\\doctrine\\cache\\PackageBootstrap"
+	}
 }
