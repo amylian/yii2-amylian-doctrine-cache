@@ -11,36 +11,76 @@ namespace amylian\yii\doctrine\cache;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class YiiCache extends BaseCache
+class YiiCache extends \Doctrine\Common\Cache\CacheProvider implements \amylian\yii\doctrine\cache\ConfigurableCacheInterface
 {
 
-    /**
-     *
-     * @var string Class of the instance to wrap
-     */
-    public $instClass = doctrine\YiiCacheProvider::class;
+    use \amylian\yii\doctrine\base\common\ConfigurableDoctrineTrait;
 
     /**
-     *
-     * @var id or declaraion of the Yii Cache component
+     * @var \yii\caching\Cache 
      */
-    public $cache = 'cache';
+    protected $yiiCache = null;
 
-    protected function getInstPropertyMappings()
+    public function __construct(array $configArray = [])
     {
-    return array_merge(parent::getInstPropertyMappings(), ['cache' => 'yiiCache']);
+        $this->assignConfigurationAttributesFromArray($this->mergeDefaultConfigurationArray($configArray));
+    }
+
+    public function getDefaultConfigurationArray(): array
+    {
+        return
+                [
+                    'yiiCache' => \yii\di\Instance::of('cache')
+        ];
+    }
+
+    public function setYiiCache(\yii\caching\Cache $cache)
+    {
+        $this->yiiCache = $cache;
+    }
+
+    public function getYiiCache(): \yii\caching\Cache
+    {
+        return $this->yiiCache;
     }
 
     /**
-     * Initializes the application component.
+     * @inheritDoc
      */
-    public function init()
+    protected function doContains($id): bool
     {
-        parent::init();
-        $this->cache = \amylian\yii\doctrine\base\InstanceManager::ensure($this->cache, '\yii\caching\CacheInterface');
-        /*
-        $this->inst->yiiCache = $this->cache;
-        */
+        return $this->yiiCache->exists($id);
+    }
+
+    protected function doDelete($id): bool
+    {
+        return $this->yiiCache->delete($id);
+    }
+
+    protected function doFetch($id)
+    {
+        return $this->yiiCache->get($id);
+    }
+
+    protected function doFlush(): bool
+    {
+        return $this->yiiCache->flush();
+    }
+
+    protected function doGetStats()
+    {
+        return array(
+            \Doctrine\Common\Cache\Cache::STATS_HITS => null,
+            \Doctrine\Common\Cache\Cache::STATS_MISSES => null,
+            \Doctrine\Common\Cache\Cache::STATS_UPTIME => null,
+            \Doctrine\Common\Cache\Cache::STATS_MEMORY_USAGE => null,
+            \Doctrine\Common\Cache\Cache::STATS_MEMORY_AVAILABLE => null,
+        );
+    }
+
+    protected function doSave($id, $data, $lifeTime = 0): bool
+    {
+        return $this->yiiCache->set($id, $data, $lifeTime);
     }
 
 }

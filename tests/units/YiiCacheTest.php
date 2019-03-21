@@ -64,7 +64,7 @@ class YiiCacheTest extends AbstractCacheTestUnit
         $cache = \Yii::$app->dcCache;
         $this->assertInstanceOf(\amylian\yii\doctrine\cache\YiiCache::class, $cache);
         $inst  = $cache->inst;
-        $this->assertInstanceOf(\amylian\yii\doctrine\cache\doctrine\YiiCacheProvider::class, $inst);
+        $this->assertInstanceOf(\amylian\yii\doctrine\cache\doctrine\YiiCache::class, $inst);
     }
 
     public function testConfiguration()
